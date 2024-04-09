@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import HeaderComponent from "./components/Header/HeaderComponent/HeaderComponent";
+import styled from "styled-components";
+import SearchBar from "./components/Header/SearchBar/SearchBar";
+import LastReleases from "./components/LastReleases/LastReleases";
+
+const AppContainer = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppContainer>
+        <HeaderComponent />
+        <SearchBar></SearchBar>
+      </AppContainer>
+        <LastReleases></LastReleases>
+    </>
   );
 }
 
